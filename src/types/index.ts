@@ -4,3 +4,4 @@ export * from './set-webhook.types';
 export * from './delete-webhook.types';
 export * from './get-webhook-info.types';
 export * from './send-message.types';
+export * from './send-document.types';

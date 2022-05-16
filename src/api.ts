@@ -7,6 +7,8 @@ import {
   GetUpdatesParams,
   GetUpdatesResponse,
   GetWebhookInfoResponse,
+  SendDocumentData,
+  SendDocumentResponse,
   SendMessageData,
   SendMessageResponse,
   SetWebhookBody,
@@ -70,6 +72,19 @@ export class TelegramBotApi {
   public sendMessage(data: SendMessageData): Promise<SendMessageResponse> {
     return this.request
       .post(TelegramApiRoute.SendMessage, data)
+      .catch(this.handleError)
+      .then(this.extractData);
+  }
+
+  public sendDocument(data: SendDocumentData): Promise<SendDocumentResponse> {
+    const body = new FormData();
+    body.append('chat_id', data.chat_id.toString());
+    body.append('document', data.document);
+
+    return this.request
+      .post(TelegramApiRoute.SendMessage, body, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
       .catch(this.handleError)
       .then(this.extractData);
   }
