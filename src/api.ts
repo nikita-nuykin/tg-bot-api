@@ -84,7 +84,7 @@ export class TelegramBotApi {
 
     return this.request
       .post(TelegramApiRoute.SendDocument, body, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: body.getHeaders(),
       })
       .catch(this.handleError)
       .then(this.extractData);
