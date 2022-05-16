@@ -1,6 +1,6 @@
 {
   "name": "@wagwan/tg-bot-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NodeJS library for telegram bot api made with TS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -29,7 +29,9 @@
     "preversion": "yarn lint",
     "postversion": "git push && git push --tags"
   },
-  "dependencies": {},
+  "dependencies": {
+    "form-data": "4.0.0"
+  },
   "devDependencies": {
     "@types/axios": "0.14.0",
     "@types/jest": "27.5.1",

@@ -1,4 +1,5 @@
 import { Axios, AxiosResponse } from 'axios';
+import FormData from 'form-data';
 import { TelegramApiRoute } from './constants';
 import {
   DeleteWebhookData,
