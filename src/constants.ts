@@ -15,6 +15,7 @@ export enum TelegramApiRoute {
   DeleteWebhook = '/deleteWebhook',
   GetWebhookInfo = '/getWebhookInfo',
   SendMessage = '/sendMessage',
+  SendDocument = '/sendDocument',
 }
 
 export enum EntityType {
