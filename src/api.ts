@@ -12,8 +12,14 @@ import {
   SendDocumentResponse,
   SendMessageData,
   SendMessageResponse,
+  SetMyCommandsData,
+  SetMyCommandsResponse,
   SetWebhookBody,
   SetWebhookResponse,
+  DeleteMyCommandsData,
+  DeleteMyCommandsResponse,
+  GetMyCommandsData,
+  GetMyCommandsResponse,
 } from './types';
 
 export type HandleError = (error: unknown) => never;
@@ -86,6 +92,27 @@ export class TelegramBotApi {
       .post(TelegramApiRoute.SendDocument, body, {
         headers: body.getHeaders(),
       })
+      .catch(this.handleError)
+      .then(this.extractData);
+  }
+
+  public setMyCommands(data: SetMyCommandsData): Promise<SetMyCommandsResponse> {
+    return this.request
+      .post(TelegramApiRoute.SetMyCommands, data)
+      .catch(this.handleError)
+      .then(this.extractData);
+  }
+
+  public deleteMyCommands(data: DeleteMyCommandsData): Promise<DeleteMyCommandsResponse> {
+    return this.request
+      .post(TelegramApiRoute.DeleteMyCommands, data)
+      .catch(this.handleError)
+      .then(this.extractData);
+  }
+
+  public getMyCommands(data: GetMyCommandsData): Promise<GetMyCommandsResponse> {
+    return this.request
+      .post(TelegramApiRoute.GetMyCommands, data)
       .catch(this.handleError)
       .then(this.extractData);
   }

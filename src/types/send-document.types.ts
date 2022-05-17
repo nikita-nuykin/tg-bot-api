@@ -1,8 +1,9 @@
 import { ReadStream } from 'fs';
+import { ChatId } from './general.types';
 import { UpdateMessage } from './get-updates.types';
 
 export interface SendDocumentData {
-  chat_id: number;
+  chat_id: ChatId;
   document: string | ReadStream;
 }
 

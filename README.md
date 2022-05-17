@@ -20,3 +20,7 @@ const api = new TelegramBotApi({
 - deleteWebhook [(tg api docs)](https://core.telegram.org/bots/api#deletewebhook)
 - getWebhookInfo [(tg api docs)](https://core.telegram.org/bots/api#getwebhookinfo)
 - sendMessage [(tg api docs)](https://core.telegram.org/bots/api#sendmessage)
+- sendDocument [(tg api docs)](https://core.telegram.org/bots/api#senddocument)
+- setMyCommands [(tg api docs)](https://core.telegram.org/bots/api#setmycommands)
+- deleteMyCommands [(tg api docs)](https://core.telegram.org/bots/api#deletemycommands)
+- getMyCommands [(tg api docs)](https://core.telegram.org/bots/api#getmycommands)
